@@ -1,0 +1,33 @@
+<mujoco>
+    <option gravity = "0 0 -9.8"/>
+    <worldbody>
+        <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+        <geom type="plane" size="5 5 0.3" rgba=".9 .9 .9 1"/>
+        <body name = "body" pos="0 0 .1" euler= '0 90 0' >
+            <joint type="free"/>
+            <geom type="box" size=".05 .25 .4" rgba=".9 .9 0 1"/>
+            <body pos="0 .28 .4" euler= '90 0 0' >
+                <joint name="w1" type="hinge"/>
+                <geom type="cylinder" size=".1 .03" rgba=".9 0 0 1"/>
+            </body>
+            <body pos="0 -.28 .4" euler= '90 0 0' >
+                <joint name="w2" type="hinge"/>
+                <geom type="cylinder" size=".1 .03" rgba=".9 0 0 1"/>
+            </body>
+            <body pos="0 -.28 -.4" euler= '90 0 0' >
+                <joint name="w3" type="hinge"/>
+                <geom type="cylinder" size=".1 .03" rgba=".9 0 0 1"/>
+            </body>
+            <body pos="0 .28 -.4" euler= '90 0 0' >
+                <joint name="w4" type="hinge"/>
+                <geom type="cylinder" size=".1 .03" rgba=".9 0 0 1"/>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <velocity name= "wheel1-vel" joint = "w1" kv = "100" />
+        <velocity name= "wheel2-vel" joint = "w2" kv = "100" />
+        <velocity name= "wheel3-vel" joint = "w3" kv = "100" />
+        <velocity name= "wheel4-vel" joint = "w4" kv = "100" />
+    </actuator>
+</mujoco>
