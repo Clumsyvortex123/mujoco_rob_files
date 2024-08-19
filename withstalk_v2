@@ -1,0 +1,39 @@
+<mujoco>
+    <worldbody>
+        <!-- Large plane surface named 'ground_plane' -->
+        <body name="ground_plane" pos="0 0 0">
+            <geom type="plane" size="10 10 0.1" rgba="0.8 0.8 0.8 1"/>
+        </body>
+        
+        <!-- Table-sized rectangular body placed 3m above the 'ground_plane' -->
+        <body name="table" pos="0 0 3">
+            <geom type="box" size="1 1.5 0.2" rgba="0.2 0.2 0.8 1"/>
+            <freejoint/>
+
+            <!-- Adding stalks at the corners of the table -->
+            <!-- Front-left stalk -->
+            <body name="stalk_front_left" pos="-1 -1.5 -0.8">
+                <geom type="cylinder" size="0.05 1 0" rgba="0.5 0.5 0.5 1"/>
+                <joint type="hinge" axis="0 0 1" pos="0 0 0"/>
+            </body>
+            
+            <!-- Front-right stalk -->
+            <body name="stalk_front_right" pos="1 -1.5 -0.8">
+                <geom type="cylinder" size="0.05 1 0" rgba="0.5 0.5 0.5 1"/>
+                <joint type="hinge" axis="0 0 1" pos="0 0 0"/>
+            </body>
+            
+            <!-- Back-left stalk -->
+            <body name="stalk_back_left" pos="-1 1.5 -0.8">
+                <geom type="cylinder" size="0.05 1 0" rgba="0.5 0.5 0.5 1"/>
+                <joint type="hinge" axis="0 0 1" pos="0 0 0"/>
+            </body>
+            
+            <!-- Back-right stalk -->
+            <body name="stalk_back_right" pos="1 1.5 -0.8">
+                <geom type="cylinder" size="0.05 1 0" rgba="0.5 0.5 0.5 1"/>
+                <joint type="hinge" axis="0 0 1" pos="0 0 0"/>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>
